@@ -67,8 +67,7 @@ effectWatch(()=>{
     console.log("d = " +  d); 
 })
 
-
-
+console.log();
 // setInterval(() => {
 //   console.log("a = " + react.a++);
 //   console.log("===============");

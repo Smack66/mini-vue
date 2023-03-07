@@ -9,6 +9,7 @@ class Dep {
     }
     collect(){
         if(currentEffect){
+            // to determine if the "get" operation is called in the effect function rather than other place 
             this.effects.add(currentEffect);
         }
     }
@@ -19,6 +20,8 @@ function reactive(target){
     const handler = {
         get: function(target, prop){
            if(currentEffect) {
+            // ensure the collect method is called in the effectWatch function
+            // if the object is not  "get" in the effectWatch , it will not collect the effect 
             if(prop === "a") {
                aEffect.add(currentEffect); 
             }           

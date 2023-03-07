@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="test"></div>
+    <div id="test2">
+      <div>4444</div>
+    </div>
+    <div id="mbti">MBTI</div>
+    <script>
+      const myTest = document.querySelector("#test");
+      myTest.innerHTML = "<div>123</div>";
+      const myTest2 = document.querySelector("#test2");
+      const textNode = document.createTextNode("haha");
+      const textNode2 = document.createTextNode("haha");
+      myTest2.appendChild(textNode);
+      myTest2.appendChild(textNode2);
+      console.log(Object.prototype.toString.apply(textNode));
+      // myTest2.innerText = "<div>123</div>";
+      // Attribute Node
+      const mbtiTypeName = document.createAttribute("mbtiType");
+      mbtiTypeName.value = "ISFP";
+      const mbti = document.querySelector("#mbti");
+      mbti.setAttributeNode(mbtiTypeName);
+    </script>
+  </body>
+</html>

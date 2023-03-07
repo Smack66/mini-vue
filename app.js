@@ -21,10 +21,8 @@ const newObj = reactive(origin);
 //     // console.log(newObj);
 //     // console.log(c);
 // })
-  
-
-
 import  {reactive} from "./core/reactivity/index.js";
+import { h } from "./h.js";
 // effectWatch(()=>{
 //    c =  newObj.a + 100;
 //    console.log(c);
@@ -36,7 +34,14 @@ newObj.a = 1000;
 // wrap the App object with the "createApp"
 export const App = {
    render(context){
-     
+    return {
+      tag: "div",
+      props:null, 
+      children: [
+        {tag: "p", props: {name:"heihei"}, children: context.count.a},
+        {tag: "p", props: {name:"heihei"}, children: context.count.a + 100 },
+      ]
+    }
    },
    setup(){
      const count = reactive({a:1});

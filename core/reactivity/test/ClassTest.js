@@ -53,3 +53,22 @@ const target = {
 }
 Reflect.get(target, 'value');
 Reflect.set(target, 'value', 3);
+
+
+// // document.innerHTML
+// const myTest= document.querySelector("#test");
+// myTest.innerHTML = '<div>123</div>';
+// const myTest2 = document.querySelector("#test2");
+// myTest.innerText= '<div>123</div>';
+
+
+
+//test const 
+const obj1 = {
+    a:1,
+    b:2
+}
+for(const key in obj1){
+    const value = obj1[key];
+    console.log(key, value);
+}

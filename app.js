@@ -1,47 +1,21 @@
-// // let a =  Dep(0);
-
-// let b;
-
-// effct(()=>{
-//     b = a.value  + 10 ;
-//     console.log(b);
-// })
-
-// a.value ++; 
-// const  {reactive, effect} = require("@vue/reactivity");
-// const {effectWatch, reactive} = require("./core/reactivity/Reactive.tutorial.js")
 
 
-let c;
-const origin = {a:1}
-const newObj = reactive(origin);
-
-// effect(()=>{
-//     c = newObj.a + 10;
-//     // console.log(newObj);
-//     // console.log(c);
-// })
 import  {reactive} from "./core/reactivity/index.js";
 import { h } from "./h.js";
-// effectWatch(()=>{
-//    c =  newObj.a + 100;
-//    console.log(c);
-// })
-newObj.a = 1000;
 
 // export the App object and let the "createApp" to render,
 // instead of write the render function manually 
 // wrap the App object with the "createApp"
 export const App = {
    render(context){
-    return {
-      tag: "div",
-      props:null, 
-      children: [
-        {tag: "p", props: {name:"heihei"}, children: context.count.a},
-        {tag: "p", props: {name:"heihei"}, children: context.count.a + 100 },
+   return h(
+      "div",
+      {id : 1, name : "input"},
+      [
+        h("p", null, context.count.a),
+        h("p", null, context.count.a + 100 )
       ]
-    }
+    )
    },
    setup(){
      const count = reactive({a:1});
